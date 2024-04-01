@@ -1,22 +1,40 @@
 import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link';
+import { MagnifyingGlassIcon, ShoppingBagIcon,HeartIcon, UserIcon } from '@heroicons/react/24/solid'
 
-const Header=()=> {
+const Header= () => {
+
   return (
-    <header className='w-full bg-gray-600 '>
-      <div className='container m-auto py-6 flex justify-between items-center mx-5'>
-        <p className='text-4xl text-bold text-slate-100'>
-          LOGO
-        </p>
-        <nav className='flex justify-between gap-2'>
-            <a href="#" className='text-base text-slate-100 p3'>Enlace 1</a>
-            <a href="#" className='text-base text-slate-100 p3'>Enlace 2</a>
-            <a href="#" className='text-base text-slate-100 p3'>Enlace 3</a>
-
-        </nav>
+    <div className="h-[13vh] bg-gray-800">
+      <div className="w-[95%] md:w-[80%] mx-auto h-[100%] flex items-center justify-between">
+        <div>
+          <Link href="/">
+            <Image src="/images/logo.png" alt="logo" width={140} height={140} />
+          </Link>
+        </div>
+        <div className="h-[50%] hidden flex-[0.7] overflow-hidden bg-gray-200 rounded-md md:flex items-center">
+          <input
+            type="text"
+            placeholder="Buscar juego (ej. Call of Duty)"
+            className="block pl-[0.5rem] w-[90%] outline-none mx-auto h-[100%] bg-gray-200"
+          />
+          <MagnifyingGlassIcon className="w-[1.8rem] h-[1.8rem] mr-[1.4rem] cursor-pointer" />
+        </div>
+        
+        <div className="flex items-center justify-center space-x-8">
+        <div className="relative">
+          <ShoppingBagIcon className="w-[2rem] h-[2rem] text-white cursor-pointer" />
+          <div className="w-[20px] text-[12px] absolute top-[-7px] right-[-7px] h-[20px] flex items-center justify-center font-semibold rounded-full bg-red-400">
+              4
+          </div>
+          </div>
+          <HeartIcon className="w-[2rem] h-[2rem] text-white cursor-pointer" />
+          <UserIcon className="w-[2rem] h-[2rem] text-white cursor-pointer" />
+        </div>
       </div>
-    </header>
-  )
-}
+    </div>
+  );
+};
 
-
-export default Header
+export default Header;
