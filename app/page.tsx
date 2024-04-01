@@ -2,16 +2,22 @@
 // import styles from './main.module.scss'
 import Header from './components/ui/Header'
 import Counter from './components/ui/Counter';
+import TopProducts from './components/ui/TopProducts';
+
+
+export const meadata={
+  title:"test",
+  description:"test 2"
+}
 
 export default function Home() {
   return (
     <>
     <Header/>
-    <main className="container my-auto mx-5">
-      <h1 className="text-4xl text-blue-600 text-bold my-4">Next js</h1>
-      <hr />
-      <p className="text-base mt-4">Bienvenidos a coder house</p>
-      <Counter/>
+    <main className="pt-[6rem] pb-[3rem] bg-gray-900">
+      <h1 className="text-4xl text-blue-600 text-bold text-white mx-[10%]">Encuentra los mejores juegos</h1>
+      {/* <Counter/> */}
+      <TopProducts/>
     </main>
     </>
   );
