@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductCard from './ProductCard'
+import { games } from '@/data/products'
 
 const FeaturedProduct = () => {
   return (
@@ -16,11 +17,13 @@ const FeaturedProduct = () => {
         </div>
                 
         <div className="grid mt-[2rem] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-[80%] mx-auto">
-           <ProductCard image="/images/g1.jpg" category="shooting" title="call of duty" price="$49.00" />
-           <ProductCard image="/images/g1.jpg" category="shooting" title="call of duty" price="$49.00" />
-           <ProductCard image="/images/g1.jpg" category="shooting" title="call of duty" price="$49.00" />
-           <ProductCard image="/images/g1.jpg" category="shooting" title="call of duty" price="$49.00" />
-           <ProductCard image="/images/g1.jpg" category="shooting" title="call of duty" price="$49.00" />
+           {
+            games.map((game)=>{
+             return <ProductCard key={game.id} image={game.image} category={game.category} title={game.title} price={game.price} />
+            })
+          }
+
+
         </div>
     </div>
             
