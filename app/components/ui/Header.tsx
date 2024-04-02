@@ -1,12 +1,21 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 import { MagnifyingGlassIcon, ShoppingBagIcon,HeartIcon, UserIcon } from '@heroicons/react/24/solid'
+import CounterCart from './CounterCart';
+import ShoppingButton from './ShoppingButton';
+import { useState } from 'react';
 
 const Header= () => {
+   const[count, setCount]=useState(0)
+   const sumCount=()=>{
+    console.log('test')
+    setCount(count+1)
+   }
 
   return (
-    <div className="h-[13vh] bg-gray-800">
+    <div className="h-[13vh] bg-gray-800 sticky	top-0 z-10">
       <div className="w-[95%] md:w-[80%] mx-auto h-[100%] flex items-center justify-between">
         <div>
           <Link href="/">
@@ -26,10 +35,10 @@ const Header= () => {
         <Link href="/pages/nosotros" className="font-bold text-white">Nosotros</Link>
         <Link href="/pages/contacto" className="font-bold text-white">Contacto</Link>
         <div className="relative">
-          <ShoppingBagIcon className="w-[2rem] h-[2rem] text-white cursor-pointer" />
-          <div className="w-[20px] text-[12px] absolute top-[-7px] right-[-7px] h-[20px] flex items-center justify-center font-semibold rounded-full bg-red-400">
-              4
-          </div>
+          <ShoppingButton onClick={sumCount}/> 
+          <CounterCart>
+            {count}
+          </CounterCart>
         </div>
           <HeartIcon className="w-[2rem] h-[2rem] text-white cursor-pointer" />
           <UserIcon className="w-[2rem] h-[2rem] text-white cursor-pointer" />

@@ -3,6 +3,7 @@ import { HeartIcon,ShoppingBagIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image';
 import BotonSecondary from './BotonSecondary';
 import Link from 'next/link';
+import ShoppingButton from './ShoppingButton';
 
 interface Props {
 id:string;
