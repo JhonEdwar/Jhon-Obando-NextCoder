@@ -23,8 +23,8 @@ const Header= () => {
         </div>
         
         <div className="flex items-center justify-center space-x-8">
-        <Link href="#" className="font-bold text-white">Nosotros</Link>
-        <Link href="#" className="font-bold text-white">Contacto</Link>
+        <Link href="/pages/nosotros" className="font-bold text-white">Nosotros</Link>
+        <Link href="/pages/contacto" className="font-bold text-white">Contacto</Link>
         <div className="relative">
           <ShoppingBagIcon className="w-[2rem] h-[2rem] text-white cursor-pointer" />
           <div className="w-[20px] text-[12px] absolute top-[-7px] right-[-7px] h-[20px] flex items-center justify-center font-semibold rounded-full bg-red-400">
